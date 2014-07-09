@@ -1,0 +1,23 @@
+{
+    "name": "truelab/virtual-property-bundle",
+    "description": "Create virtual properties for doctrine entities after the doctrine postLoad event.",
+    "type" : "symfony-bundle",
+    "keywords" : [
+        "virtual property",
+        "doctrine virtual property",
+        "virtual entity properties"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "oriodesign",
+            "email": "oriodesign@gmail.com"
+        }
+    ],
+    "target-dir" : "Truelab/VirtualPropertyBundle",
+    "require": {
+
+    }
+}

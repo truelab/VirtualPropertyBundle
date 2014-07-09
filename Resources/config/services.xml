@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!-- Parameters -->
+    <parameters>
+        <parameter key="truelab_virtual_property.virtual_property_generator_bag.class">Truelab\VirtualPropertyBundle\Generator\VirtualPropertyGeneratorBag</parameter>
+        <parameter key="truelab_virtual_property.entity_listener.class">Truelab\VirtualPropertyBundle\Listener\EntityListener</parameter>
+    </parameters>
+
+    <!-- Services -->
+    <services>
+
+        <!-- Virtual Property Generator Bag -->
+        <service id="truelab_virtual_property.virtual_property_generator_bag" class="%truelab_virtual_property.virtual_property_generator_bag.class%">
+        </service>
+
+        <!-- Entity Listener -->
+        <service id="truelab_virtual_property.entity_listener" class="%truelab_virtual_property.entity_listener.class%">
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="truelab_virtual_property.virtual_property_generator_bag" />
+            <tag name="doctrine.event_listener" event="postLoad" method="postLoad" />
+            <tag name="doctrine.event_listener" event="onFlush" method="onFlush" />
+            <tag name="doctrine.event_listener" event="postFlush" method="postFlush" />
+        </service>
+
+    </services>
+
+</container>
