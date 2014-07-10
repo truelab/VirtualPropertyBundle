@@ -1,5 +1,7 @@
 # Truelab Virtual Property Bundle
 
+[![Build Status](https://travis-ci.org/truelab/VirtualPropertyBundle.svg?branch=master)](https://travis-ci.org/truelab/VirtualPropertyBundle)
+
 Create virtual properties for Doctrine ORM entities on postLoad and postFlush events.
 
 This bundle can be useful when you have virtual properties of entities that are not persisted on database but that you want to generate on the fly. 
